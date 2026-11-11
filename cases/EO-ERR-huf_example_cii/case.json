@@ -1,0 +1,105 @@
+{
+ "schema_version": 1,
+ "id": "EO-ERR-huf_example_cii",
+ "title": "Official EN16931 example huf_example_cii (CII) with one change, expected to fail the EN16931 Schematron",
+ "kind": "oracle",
+ "class": "error",
+ "synthetic": true,
+ "rights": "Official ConnectingEurope example, EUPL 1.2, referenced and not copied; see NOTICE and LICENSE-NOTES.md of facturxapi/en16931-oracles",
+ "inputs": [
+  {
+   "role": "invoice",
+   "format": "CII",
+   "source": {
+    "type": "git",
+    "repo": "facturxapi/en16931-oracles",
+    "commit": "083f64faee66dd45cd6cc07839f4924b84d31e9d",
+    "path": "mutants/huf_example_cii.xml"
+   },
+   "sha256": "3af607f163172a7b0a1fcf352a929a8eb988a230c8bd9729225a903ad71dfccc",
+   "bytes": 111526
+  }
+ ],
+ "evidence": {
+  "svrl": {
+   "what": "SVRL report of the EN16931 CII Schematron run on this file",
+   "source": {
+    "type": "git",
+    "repo": "facturxapi/en16931-oracles",
+    "commit": "083f64faee66dd45cd6cc07839f4924b84d31e9d",
+    "path": "mutants/receipts/huf_example_cii.svrl.xml"
+   },
+   "sha256": "e06bd88693ce12cd9d3664b0f6967fc0f1c5de4215abd606209c0cdc560a1df4"
+  }
+ },
+ "layers": {
+  "packaging": {
+   "expectation": null,
+   "observed": null,
+   "state": "not_evaluated",
+   "reason": "XML only: no PDF to check for PDF/A-3 or an embedded Factur-X part"
+  },
+  "facturx_profile": {
+   "expectation": null,
+   "observed": null,
+   "state": "not_evaluated",
+   "reason": "this case runs the EN16931 Schematron only, not a Factur-X profile check"
+  },
+  "en16931": {
+   "expectation": {
+    "verdict": "fail",
+    "ids": [
+     "BR-CO-17",
+     "BR-S-08",
+     "BR-S-09"
+    ]
+   },
+   "observed": {
+    "verdict": "fail",
+    "ids": [
+     "BR-CO-17",
+     "BR-S-08",
+     "BR-S-09"
+    ],
+    "engine": "SaxonC-HE 13.0 with the vendored ConnectingEurope validation-1.3.17 XSLT, as recorded in the repository's RESULTS.json",
+    "evidence": [
+     "svrl"
+    ]
+   },
+   "state": "confirmed"
+  },
+  "fr_ctc": {
+   "expectation": null,
+   "observed": null,
+   "state": "not_evaluated",
+   "reason": "the BR-FR rules are outside this oracle run"
+  },
+  "pa_acceptance": {
+   "expectation": null,
+   "observed": null,
+   "state": "not_evaluated",
+   "reason": "a technical check never proves acceptance by a PA"
+  }
+ },
+ "runs": [
+  {
+   "kind": "oracle-replay",
+   "engine": "SaxonC-HE 13.0 with the vendored ConnectingEurope validation-1.3.17 XSLT, as recorded in the repository's RESULTS.json",
+   "source": {
+    "type": "git",
+    "repo": "facturxapi/en16931-oracles",
+    "commit": "083f64faee66dd45cd6cc07839f4924b84d31e9d",
+    "path": "mutants/RESULTS.json"
+   },
+   "receipts": [
+    "svrl"
+   ],
+   "replay": "python3 scripts/validate.py --dir mutants --no-expected in a checkout of facturxapi/en16931-oracles at 083f64faee66"
+  }
+ ],
+ "limits": [
+  "Official ConnectingEurope Schematron on one file: it says nothing about a FacturX product, an API, a PDF or the France CTC rules.",
+  "The result belongs to the pinned engine and rule set; another version can differ."
+ ],
+ "notes": "One semantic change to the official example. Class: VAT-RATE (BT-119). Change: L325 header ApplicableTradeTax/RateApplicablePercent : 27.00 → 19.00 (CalculatedAmount 18679.00 inchangé)."
+}

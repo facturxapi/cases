@@ -1,0 +1,96 @@
+{
+ "schema_version": 1,
+ "id": "EO-OK-CII_example1",
+ "title": "Official EN16931 example CII_example1 (CII), expected to pass the EN16931 Schematron",
+ "kind": "oracle",
+ "class": "valid",
+ "synthetic": true,
+ "rights": "Official ConnectingEurope example, EUPL 1.2, referenced and not copied; see NOTICE and LICENSE-NOTES.md of facturxapi/en16931-oracles",
+ "inputs": [
+  {
+   "role": "invoice",
+   "format": "CII",
+   "source": {
+    "type": "git",
+    "repo": "facturxapi/en16931-oracles",
+    "commit": "083f64faee66dd45cd6cc07839f4924b84d31e9d",
+    "path": "fixtures/CII_example1.xml"
+   },
+   "sha256": "0c12e3ca9aab58299e6271b89d061274694c62159510ca2d848f13d287ee4f99",
+   "bytes": 34459
+  }
+ ],
+ "evidence": {
+  "svrl": {
+   "what": "SVRL report of the EN16931 CII Schematron run on this file",
+   "source": {
+    "type": "git",
+    "repo": "facturxapi/en16931-oracles",
+    "commit": "083f64faee66dd45cd6cc07839f4924b84d31e9d",
+    "path": "oracles/receipts/CII_example1.svrl.xml"
+   },
+   "sha256": "58f75e02e5959227829e09e50e6339647669623f8f9e8f3ff13e9425696d8a42"
+  }
+ },
+ "layers": {
+  "packaging": {
+   "expectation": null,
+   "observed": null,
+   "state": "not_evaluated",
+   "reason": "XML only: no PDF to check for PDF/A-3 or an embedded Factur-X part"
+  },
+  "facturx_profile": {
+   "expectation": null,
+   "observed": null,
+   "state": "not_evaluated",
+   "reason": "this case runs the EN16931 Schematron only, not a Factur-X profile check"
+  },
+  "en16931": {
+   "expectation": {
+    "verdict": "pass",
+    "ids": []
+   },
+   "observed": {
+    "verdict": "pass",
+    "ids": [],
+    "engine": "SaxonC-HE 13.0 with the vendored ConnectingEurope validation-1.3.17 XSLT, as recorded in the repository's RESULTS.json",
+    "evidence": [
+     "svrl"
+    ]
+   },
+   "state": "confirmed"
+  },
+  "fr_ctc": {
+   "expectation": null,
+   "observed": null,
+   "state": "not_evaluated",
+   "reason": "the BR-FR rules are outside this oracle run"
+  },
+  "pa_acceptance": {
+   "expectation": null,
+   "observed": null,
+   "state": "not_evaluated",
+   "reason": "a technical check never proves acceptance by a PA"
+  }
+ },
+ "runs": [
+  {
+   "kind": "oracle-replay",
+   "engine": "SaxonC-HE 13.0 with the vendored ConnectingEurope validation-1.3.17 XSLT, as recorded in the repository's RESULTS.json",
+   "source": {
+    "type": "git",
+    "repo": "facturxapi/en16931-oracles",
+    "commit": "083f64faee66dd45cd6cc07839f4924b84d31e9d",
+    "path": "oracles/receipts/RESULTS.json"
+   },
+   "receipts": [
+    "svrl"
+   ],
+   "replay": "python3 scripts/validate.py in a checkout of facturxapi/en16931-oracles at 083f64faee66"
+  }
+ ],
+ "limits": [
+  "Official ConnectingEurope Schematron on one file: it says nothing about a FacturX product, an API, a PDF or the France CTC rules.",
+  "The result belongs to the pinned engine and rule set; another version can differ."
+ ]
+}

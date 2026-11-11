@@ -1,0 +1,490 @@
+{
+ "schema_version": 1,
+ "generated_by": "scripts/check_cases.py",
+ "case_count": 23,
+ "cases": [
+  {
+   "id": "EO-ERR-CII-BR-CO-10-RoundingIssue",
+   "title": "Official EN16931 example CII-BR-CO-10-RoundingIssue (CII) with one change, expected to fail the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "error",
+   "path": "cases/EO-ERR-CII-BR-CO-10-RoundingIssue/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-ERR-CII_business_example_01",
+   "title": "Official EN16931 example CII_business_example_01 (CII) with one change, expected to fail the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "error",
+   "path": "cases/EO-ERR-CII_business_example_01/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-ERR-CII_business_example_02",
+   "title": "Official EN16931 example CII_business_example_02 (CII) with one change, expected to fail the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "error",
+   "path": "cases/EO-ERR-CII_business_example_02/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-ERR-CII_business_example_Z",
+   "title": "Official EN16931 example CII_business_example_Z (CII) with one change, expected to fail the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "error",
+   "path": "cases/EO-ERR-CII_business_example_Z/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-ERR-CII_example1",
+   "title": "Official EN16931 example CII_example1 (CII) with one change, expected to fail the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "error",
+   "path": "cases/EO-ERR-CII_example1/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-ERR-CII_example3",
+   "title": "Official EN16931 example CII_example3 (CII) with one change, expected to fail the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "error",
+   "path": "cases/EO-ERR-CII_example3/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-ERR-CII_example5",
+   "title": "Official EN16931 example CII_example5 (CII) with one change, expected to fail the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "error",
+   "path": "cases/EO-ERR-CII_example5/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-ERR-XRechnung-O",
+   "title": "Official EN16931 example XRechnung-O (CII) with one change, expected to fail the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "error",
+   "path": "cases/EO-ERR-XRechnung-O/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-ERR-huf_example_cii",
+   "title": "Official EN16931 example huf_example_cii (CII) with one change, expected to fail the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "error",
+   "path": "cases/EO-ERR-huf_example_cii/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-ERR-ubl-tc434-creditnote1",
+   "title": "Official EN16931 example ubl-tc434-creditnote1 (UBL) with one change, expected to fail the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "error",
+   "path": "cases/EO-ERR-ubl-tc434-creditnote1/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "UBL"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-OK-CII-BR-CO-10-RoundingIssue",
+   "title": "Official EN16931 example CII-BR-CO-10-RoundingIssue (CII), expected to pass the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "valid",
+   "path": "cases/EO-OK-CII-BR-CO-10-RoundingIssue/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-OK-CII_business_example_01",
+   "title": "Official EN16931 example CII_business_example_01 (CII), expected to pass the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "valid",
+   "path": "cases/EO-OK-CII_business_example_01/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-OK-CII_business_example_02",
+   "title": "Official EN16931 example CII_business_example_02 (CII), expected to pass the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "valid",
+   "path": "cases/EO-OK-CII_business_example_02/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-OK-CII_business_example_Z",
+   "title": "Official EN16931 example CII_business_example_Z (CII), expected to pass the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "valid",
+   "path": "cases/EO-OK-CII_business_example_Z/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-OK-CII_example1",
+   "title": "Official EN16931 example CII_example1 (CII), expected to pass the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "valid",
+   "path": "cases/EO-OK-CII_example1/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-OK-CII_example3",
+   "title": "Official EN16931 example CII_example3 (CII), expected to pass the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "valid",
+   "path": "cases/EO-OK-CII_example3/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-OK-CII_example5",
+   "title": "Official EN16931 example CII_example5 (CII), expected to pass the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "valid",
+   "path": "cases/EO-OK-CII_example5/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-OK-XRechnung-O",
+   "title": "Official EN16931 example XRechnung-O (CII), expected to pass the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "valid",
+   "path": "cases/EO-OK-XRechnung-O/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-OK-huf_example_cii",
+   "title": "Official EN16931 example huf_example_cii (CII), expected to pass the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "valid",
+   "path": "cases/EO-OK-huf_example_cii/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "EO-OK-ubl-tc434-creditnote1",
+   "title": "Official EN16931 example ubl-tc434-creditnote1 (UBL), expected to pass the EN16931 Schematron",
+   "kind": "oracle",
+   "class": "valid",
+   "path": "cases/EO-OK-ubl-tc434-creditnote1/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "UBL"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "PR-0001-erp-json-to-facturx-pdfa3",
+   "title": "ERP JSON converted to a Factur-X PDF/A-3 and CII XML on staging (target EN16931)",
+   "kind": "product-run",
+   "class": "valid",
+   "path": "cases/PR-0001-erp-json-to-facturx-pdfa3/case.json",
+   "layers": {
+    "packaging": "confirmed",
+    "facturx_profile": "confirmed",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice_data",
+     "format": "JSON"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "PR-0002-scan-valid-sample-facturx",
+   "title": "The valid Factur-X sample PDF scanned on staging (targets EN16931 and France 2026)",
+   "kind": "product-run",
+   "class": "valid",
+   "path": "cases/PR-0002-scan-valid-sample-facturx/case.json",
+   "layers": {
+    "packaging": "confirmed",
+    "facturx_profile": "confirmed",
+    "en16931": "confirmed",
+    "fr_ctc": "confirmed",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "PDF"
+    }
+   ],
+   "runs": 1
+  },
+  {
+   "id": "PR-0003-scan-invalid-br-co-16",
+   "title": "A CII XML whose amount due (BT-115) does not equal the invoice total, scanned on staging",
+   "kind": "product-run",
+   "class": "error",
+   "path": "cases/PR-0003-scan-invalid-br-co-16/case.json",
+   "layers": {
+    "packaging": "not_evaluated",
+    "facturx_profile": "not_evaluated",
+    "en16931": "confirmed",
+    "fr_ctc": "not_evaluated",
+    "pa_acceptance": "not_evaluated"
+   },
+   "inputs": [
+    {
+     "role": "invoice",
+     "format": "CII"
+    }
+   ],
+   "runs": 1
+  }
+ ]
+}

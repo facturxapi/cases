@@ -1,0 +1,190 @@
+{
+ "schema_version": 1,
+ "id": "PR-0001-erp-json-to-facturx-pdfa3",
+ "title": "ERP JSON converted to a Factur-X PDF/A-3 and CII XML on staging (target EN16931)",
+ "kind": "product-run",
+ "class": "valid",
+ "synthetic": true,
+ "rights": "MIT; authored synthetic data, no customer input (see the manifest.json of the capture)",
+ "inputs": [
+  {
+   "role": "invoice_data",
+   "format": "JSON",
+   "source": {
+    "type": "url",
+    "url": "https://facturxapi.com/demo/integration-proof-20261105/invoice.json"
+   },
+   "sha256": "a67f631ebbf0db925cf9eb4b3829ca4ad38943d01abe9fbe0f33127e578454e4",
+   "bytes": 1819
+  }
+ ],
+ "evidence": {
+  "capture": {
+   "what": "date, request and HTTP status of the capture",
+   "source": {
+    "type": "url",
+    "url": "https://facturxapi.com/demo/integration-proof-20261105/capture.json"
+   },
+   "sha256": "0248768f919f49c4cd4bbdfa2daa2f59b856480246f8cbc363acec76ccd5f910",
+   "bytes": 279
+  },
+  "response": {
+   "what": "the complete HTTP response (PDF and XML base64-encoded)",
+   "source": {
+    "type": "url",
+    "url": "https://facturxapi.com/demo/integration-proof-20261105/response.json"
+   },
+   "sha256": "cb07336a188478a3aa711358be08061bc127a2738a222cfec8a66402e0889626",
+   "bytes": 261915
+  },
+  "result_pdf": {
+   "what": "the Factur-X PDF the API returned",
+   "source": {
+    "type": "url",
+    "url": "https://facturxapi.com/demo/integration-proof-20261105/result.pdf"
+   },
+   "sha256": "c197f23ebe481b40f6d79bf6f61aa024a1c21bfaa154faffdaec4f270e10e1a9",
+   "bytes": 23693
+  },
+  "result_xml": {
+   "what": "the CII XML the API returned",
+   "source": {
+    "type": "url",
+    "url": "https://facturxapi.com/demo/integration-proof-20261105/result.xml"
+   },
+   "sha256": "9e0ca7201fa966db8415d3144be0202638262b0f92f19eacf6d695e30e005cb5",
+   "bytes": 5707
+  },
+  "oracles": {
+   "what": "independent checks: XSD, CEN Schematron, PDF/A-3B",
+   "source": {
+    "type": "url",
+    "url": "https://facturxapi.com/demo/integration-proof-20261105/oracles/oracles.json"
+   },
+   "sha256": "af0751a677a40ab7daf823a9c4b9d10fb6da93f69584c1b07c05f4c8a0da7ead",
+   "bytes": 4103
+  },
+  "cen_svrl": {
+   "what": "SVRL report of the official CEN EN16931 1.3.16 Schematron on the returned XML",
+   "source": {
+    "type": "url",
+    "url": "https://facturxapi.com/demo/integration-proof-20261105/oracles/cen-svrl.xml"
+   },
+   "sha256": "d0c4d8848332aa4a034a132cf6a28d74d8980c0766bed630ca3abee05a541e12",
+   "bytes": 11448
+  },
+  "mustang_pdf": {
+   "what": "Mustang / veraPDF report on the returned PDF",
+   "source": {
+    "type": "url",
+    "url": "https://facturxapi.com/demo/integration-proof-20261105/oracles/mustang-pdf.xml"
+   },
+   "sha256": "45ecf557abf8bfb8531b06586fd71de4a939fa951af0aef01f68eb7a984d830c",
+   "bytes": 3773
+  },
+  "preservation": {
+   "what": "comparison of the input values with the XML and PDF output",
+   "source": {
+    "type": "url",
+    "url": "https://facturxapi.com/demo/integration-proof-20261105/preservation.json"
+   },
+   "sha256": "82c63d02e76146648a13a2e2c570890a84761ce7e66a269c8094b5a813dc1ae5",
+   "bytes": 16417
+  },
+  "manifest": {
+   "what": "sizes and SHA-256 of every published file of the capture",
+   "source": {
+    "type": "url",
+    "url": "https://facturxapi.com/demo/integration-proof-20261105/manifest.json"
+   },
+   "sha256": "dd5e58cbcf6bbf1fb5eabd4b817a349fa9cdda7ce7e656b0f96d2d0b3e5b9b74",
+   "bytes": 4308
+  }
+ },
+ "layers": {
+  "packaging": {
+   "expectation": {
+    "verdict": "pass"
+   },
+   "observed": {
+    "verdict": "pass",
+    "engine": "veraPDF 1.26.5 via Mustang CLI 2.24.0 (PDF/A-3B)",
+    "evidence": [
+     "oracles",
+     "mustang_pdf"
+    ]
+   },
+   "state": "confirmed"
+  },
+  "facturx_profile": {
+   "expectation": {
+    "verdict": "pass"
+   },
+   "observed": {
+    "verdict": "pass",
+    "engine": "lxml 6.1.0 against Factur-X_1.09.2_EN16931.xsd",
+    "evidence": [
+     "oracles"
+    ]
+   },
+   "state": "confirmed"
+  },
+  "en16931": {
+   "expectation": {
+    "verdict": "pass",
+    "ids": []
+   },
+   "observed": {
+    "verdict": "pass",
+    "engine": "official CEN validation-1.3.16 XSLT, SaxonC-HE 12.9.0 (a second reference: the service applies the Factur-X pack for CII)",
+    "evidence": [
+     "oracles",
+     "cen_svrl"
+    ],
+    "ids": []
+   },
+   "state": "confirmed"
+  },
+  "fr_ctc": {
+   "expectation": null,
+   "observed": null,
+   "state": "not_evaluated",
+   "reason": "no France CTC validation was run or claimed in this capture"
+  },
+  "pa_acceptance": {
+   "expectation": null,
+   "observed": null,
+   "state": "not_evaluated",
+   "reason": "a technical check never proves acceptance by a PA"
+  }
+ },
+ "runs": [
+  {
+   "kind": "api-call",
+   "target": "staging",
+   "when": "2026-11-05T10:31:17Z",
+   "api_build": {
+    "commit_sha": "647e97f23f51f386b6cae9a82d71e30392e831b5",
+    "build_date": "2026-11-05T10:08:36.273024Z"
+   },
+   "request": "POST /api/v1/convert?enrich=false with invoice_data=invoice.json, validation_target=en16931, output=facturx_pdfa3 (a staging API key is needed to replay it)",
+   "receipts": [
+    "capture",
+    "response",
+    "result_pdf",
+    "result_xml",
+    "oracles",
+    "cen_svrl",
+    "mustang_pdf",
+    "preservation",
+    "manifest"
+   ]
+  }
+ ],
+ "limits": [
+  "Staging at the build above, on the date above: not production, and it can change if the rules or the service change.",
+  "Five texts of the input are not kept identically in the visible PDF (for example an em dash becomes a question mark and the euro sign becomes EUR); the accents of this example do not prove support for all Unicode characters.",
+  "A text annex added to a source PDF disappeared from the returned PDF in a second test, although the response was a success (see the attachment-probe folder of the capture).",
+  "No lossless conversion, no France CTC validation, no Peppol / XRechnung conformity and no acceptance by a PA is shown by this case."
+ ]
+}

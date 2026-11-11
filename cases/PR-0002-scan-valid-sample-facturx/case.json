@@ -1,0 +1,166 @@
+{
+ "schema_version": 1,
+ "id": "PR-0002-scan-valid-sample-facturx",
+ "title": "The valid Factur-X sample PDF scanned on staging (targets EN16931 and France 2026)",
+ "kind": "product-run",
+ "class": "valid",
+ "synthetic": true,
+ "rights": "MIT; authored synthetic data, no customer input (see the manifest.json of the capture)",
+ "inputs": [
+  {
+   "role": "invoice",
+   "format": "PDF",
+   "source": {
+    "type": "url",
+    "url": "https://facturxapi.com/demo/facturx-valid-sample.pdf"
+   },
+   "sha256": "816393c6194c198026b80f8c07ffcae1114a7f13b43cd92e1658dedb40b00042",
+   "bytes": 54433
+  }
+ ],
+ "evidence": {
+  "capture": {
+   "what": "date, request, API build before and after, and digests of the unpublished raw responses",
+   "source": {
+    "type": "url",
+    "url": "https://facturxapi.com/demo/scan-test-files-20261106/capture.json"
+   },
+   "sha256": "f8610c00fdd57a8268258642f410fae96c3c3527b5e3c26c6b25db92e90bae9a",
+   "bytes": 1528
+  },
+  "api_meta": {
+   "what": "the API build and the Schematron authority used for CII, read after the calls",
+   "source": {
+    "type": "url",
+    "url": "https://facturxapi.com/demo/scan-test-files-20261106/staging/api-meta-after.json"
+   },
+   "sha256": "36215b5df0e6faaa416b17e2e0e16dae59d51c843fbd3f23a29f64b416c98ac3",
+   "bytes": 321
+  },
+  "oracle": {
+   "what": "offline check with the official CEN EN16931 CII Schematron 1.3.16 (SaxonC-HE 12.9.0)",
+   "source": {
+    "type": "url",
+    "url": "https://facturxapi.com/demo/scan-test-files-20261106/oracles/cen-en16931-cii-1.3.16.json"
+   },
+   "sha256": "a28960a6d55e36e28e5eff7c5a27513660cc4172376c3eaa387d496c82def9ab",
+   "bytes": 540
+  },
+  "manifest": {
+   "what": "sizes and SHA-256 of every published file of the capture",
+   "source": {
+    "type": "url",
+    "url": "https://facturxapi.com/demo/scan-test-files-20261106/manifest.json"
+   },
+   "sha256": "6348e21b311e91b630a59c84058c42a92a2eec37e40bc969ce58c764d54f823b",
+   "bytes": 1935
+  },
+  "en16931_response": {
+   "what": "projection of the /scan response, target en16931",
+   "source": {
+    "type": "url",
+    "url": "https://facturxapi.com/demo/scan-test-files-20261106/staging/facturx-valid-sample.en16931.json"
+   },
+   "sha256": "89a926743a96e2c0b2def0c15a048508d87866fbf79e334638f679baa0232922",
+   "bytes": 1032
+  },
+  "france_response": {
+   "what": "projection of the /scan response, target france_2026",
+   "source": {
+    "type": "url",
+    "url": "https://facturxapi.com/demo/scan-test-files-20261106/staging/facturx-valid-sample.france_2026.json"
+   },
+   "sha256": "1791db8c95f29494f40cd11cec72639000da5ea224eaf2d7b3e5e5a22c574c49",
+   "bytes": 1257
+  }
+ },
+ "layers": {
+  "packaging": {
+   "expectation": {
+    "verdict": "pass"
+   },
+   "observed": {
+    "verdict": "pass",
+    "engine": "FacturX API staging /api/scan: checks pdfa and facturx_pdf passed",
+    "evidence": [
+     "en16931_response"
+    ]
+   },
+   "state": "confirmed"
+  },
+  "facturx_profile": {
+   "expectation": {
+    "verdict": "pass"
+   },
+   "observed": {
+    "verdict": "pass",
+    "engine": "FacturX API staging /api/scan: checks xsd and schematron passed, facturxProfile passed",
+    "evidence": [
+     "en16931_response"
+    ]
+   },
+   "state": "confirmed"
+  },
+  "en16931": {
+   "expectation": {
+    "verdict": "pass",
+    "ids": []
+   },
+   "observed": {
+    "verdict": "pass",
+    "engine": "FacturX API staging /api/scan target en16931; cross-checked offline with the official CEN CII Schematron 1.3.16 (0 failed assertion)",
+    "evidence": [
+     "en16931_response",
+     "oracle"
+    ],
+    "ids": []
+   },
+   "state": "confirmed"
+  },
+  "fr_ctc": {
+   "expectation": {
+    "verdict": "pass"
+   },
+   "observed": {
+    "verdict": "pass",
+    "engine": "FacturX API staging /api/scan target france_2026: frCtc passed, reason fr_ctc_no_findings",
+    "evidence": [
+     "france_response"
+    ]
+   },
+   "state": "confirmed"
+  },
+  "pa_acceptance": {
+   "expectation": null,
+   "observed": null,
+   "state": "not_evaluated",
+   "reason": "the responses report paAcceptance as not_submitted: nothing was sent to a PA"
+  }
+ },
+ "runs": [
+  {
+   "kind": "api-call",
+   "target": "staging",
+   "when": "2026-11-06T16:25:28Z",
+   "api_build": {
+    "commit_sha": "900685311ea7919838ca5cd66788bf38f109118d",
+    "build_date": "2026-11-06T13:00:13.585120Z"
+   },
+   "note": "the france_2026 response for the valid file dates from 16:24Z (first pass); the three others from 16:25Z (capture.json)",
+   "request": "POST /api/scan with the file and validation_target=en16931, then france_2026 (public scanner, no key)",
+   "receipts": [
+    "capture",
+    "en16931_response",
+    "france_response",
+    "oracle",
+    "api_meta",
+    "manifest"
+   ]
+  }
+ ],
+ "limits": [
+  "Staging at the build above, on the date above: not production, and it can change if the rules or the service change.",
+  "The service applies the Factur-X 1.09.2 Schematron pack for CII; the CEN XSLT is loaded but not routed for this format (api_meta), so the CEN check here is a second reference run outside the service.",
+  "A pass on these layers is not an acceptance by a PA."
+ ]
+}
